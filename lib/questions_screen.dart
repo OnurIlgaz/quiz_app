@@ -16,7 +16,6 @@ class QuestionsScreen extends StatefulWidget{
 class _QuestionsState extends State<QuestionsScreen>{
 	int questionIndex = 0;
 
-
 	void onTap(String selectedAnswer){
 		widget.onSelectAnswer(selectedAnswer);
 		setState(() {
