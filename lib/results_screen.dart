@@ -41,7 +41,7 @@ class ResultsScreen extends StatelessWidget{
 			mainAxisSize: MainAxisSize.min,
 			children: [
 				Text(
-					"You answered ${correctAnswerCount} out of ${questions.length} questions correctly!",
+					"You answered $correctAnswerCount out of ${questions.length} questions correctly!",
 					style: GoogleFonts.lato(
 						color: Colors.white,
 						fontSize: 30,
@@ -82,13 +82,15 @@ class AnsweredQuestionView extends StatelessWidget{
 	Widget build(context){
 		return 
 		Container(
-			margin: EdgeInsets.only(left: 20, right: 40),
+			margin: EdgeInsets.only(left: 40, right: 40),
 			child: Row(
+				crossAxisAlignment: CrossAxisAlignment.start,
 				mainAxisSize: MainAxisSize.min,
 				children: [
 					Container(
-						width: 30,
-						height: 30,
+						width: 35,
+						height: 35,
+						margin: EdgeInsets.only(right: 10),
 						decoration: BoxDecoration(
 							shape: BoxShape.circle,
 							color: summary['correct-answer'] == summary['user-answer']?
@@ -98,15 +100,19 @@ class AnsweredQuestionView extends StatelessWidget{
 						child: Center(
 							child: Text(
 								summary['question-index'].toString(),
+								style: TextStyle(
+									fontWeight: FontWeight.bold,
+								)
 							),
 						),
 					),
 					Expanded(
 						child: Column(
+							crossAxisAlignment: CrossAxisAlignment.start,
 							children: [
 								Text(
 									maxLines: 2,
-									textAlign: TextAlign.center,
+									//textAlign: TextAlign.left,
 									summary['question']!.toString(),
 									style: TextStyle(
 										color: Colors.white,
@@ -115,7 +121,7 @@ class AnsweredQuestionView extends StatelessWidget{
 								),
 								Text(
 									maxLines: 2,
-									textAlign: TextAlign.center,
+									//textAlign: TextAlign.center,
 									summary['correct-answer']!.toString(),
 									style: TextStyle(
 										color: Color.fromARGB(255, 84, 81, 93),
@@ -123,7 +129,7 @@ class AnsweredQuestionView extends StatelessWidget{
 								),
 								Text(
 									maxLines: 2,
-									textAlign: TextAlign.center,
+									//textAlign: TextAlign.center,
 									summary['user-answer']!.toString(),
 									style: TextStyle(
 										color: Color.fromARGB(255, 63, 161, 197),
