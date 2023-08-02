@@ -1,3 +1,3 @@
 # quiz_app
 
-A basic hardcoded quiz app after answering every single question you can see which questions you have answered wrong.
+A basic hardcoded quiz app. After answering every single question you can see which questions you have answered wrong.
